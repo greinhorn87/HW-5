@@ -71,3 +71,117 @@ window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
 })
 
+ let allRidesFilter = document.querySelector('#all-filter')
+
+ allRidesFilter.addEventListener('click',async function(event){
+   event.preventDefault()
+   
+  //  let filterReset = document.querySelector('.filter')
+  //  filterReset.innerHTML=' '
+   console.log('All Ride Filter Clicked')
+    allRidesFilter.insertAdjacentHTML('beforeend', `<h1>All Rides Selected</h1>`)
+    
+   let response = await fetch (`https://kiei451.com/api/rides.json`)
+  //  console.log(response)
+
+   let json = await response.json()
+  //  console.log(json)
+
+  allRidesFilter.insertAdjacentElement('beforeend' , renderRides(json))
+  // This line above runs the renderRides function to insert the correct HTML and inputs ALL the data present in json. 
+    
+    
+  
+
+
+  })
+
+
+
+
+  let nooberPoolFilter = document.querySelector('#noober-pool-filter')
+
+  nooberPoolFilter.addEventListener('click', async function(event){
+    console.log('Noober Pool Filter Clicked')
+    nooberPoolFilter.insertAdjacentHTML('beforeend', `<h1>Selected</h1>`)
+    let response = await fetch (`https://kiei451.com/api/rides.json`)
+  //  console.log(response)
+
+   let json = await response.json()
+  //  console.log(json)
+
+  
+
+  nooberPoolFilter.insertAdjacentElement('beforeend' , renderRides(json))
+  
+    
+    
+  
+
+
+  })
+
+
+
+  let nooberPurpleFilter = document.querySelector('#noober-purple-filter')
+
+  nooberPurpleFilter.addEventListener('click',async function(event){
+  console.log('Noober PURPLE Filter Clicked')
+  nooberPurpleFilter.insertAdjacentHTML('beforeend', `<h1>Selected</h1>`)
+  let response = await fetch (`https://kiei451.com/api/rides.json`)
+//  console.log(response)
+
+ let json = await response.json()
+//  console.log(json)
+
+nooberPurpleFilter.insertAdjacentElement('beforeend' , renderRides(json)) 
+    // let nooberPurpleFilter = json.levelOfService.purpleRequested
+    //   for (let i = 0; i<json.length; i++){
+    //     let b = levelOfService(json[i])
+    //     if(b== "Noober Purple"){
+    //       nooberPurpleFilter.push(json[i])
+    //     let ridesDiv = document.querySelector('.rides')
+
+    //     let html = renderRides(nooberPurpleFilter)
+    //     ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    //     }
+    //   }
+
+  })
+
+
+
+
+  let nooberXlFilter = document.querySelector('#noober-xl-filter')
+
+  nooberXlFilter.addEventListener('click',async function(event){
+  console.log('Noober XL Filter Clicked')
+  nooberXlFilter.insertAdjacentHTML('beforeend', `<h1>Selected</h1>`)
+  let response = await fetch (`https://kiei451.com/api/rides.json`)
+//  console.log(response)
+
+ let json = await response.json()
+//  console.log(json)
+
+nooberXlFilter.insertAdjacentElement('beforeend' , renderRides(json))
+
+
+  })
+
+
+
+  let nooberXFilter = document.querySelector('#noober-x-filter')
+
+  nooberXFilter.addEventListener('click',async function(event){
+  console.log('Noober X Filter Clicked')
+  nooberXFilter.insertAdjacentHTML('beforeend', `<h1>Selected</h1>`)
+  let response = await fetch (`https://kiei451.com/api/rides.json`)
+//  console.log(response)
+
+ let json = await response.json()
+//  console.log(json)
+
+nooberXFilter.insertAdjacentElement('beforeend' , renderRides(json))
+
+
+  })
